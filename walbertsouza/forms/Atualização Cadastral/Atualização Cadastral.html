@@ -1,0 +1,536 @@
+<link rel="stylesheet" type="text/css" href="https://style.fluig.com/css/fluig-style-guide.min.css">
+<script src="/resources/js/jquery/jquery.js"></script>
+<script src="/resources/js/jquery/jquery-ui.min.js"></script>
+<script src="/resources/js/mustache/mustache-min.js"></script>
+<script src="/style-guide/js/fluig-style-guide.min.js"></script>
+<script type="text/javascript" src="jquery.mask.js" charset="utf-8"></script>
+<script type="text/javascript" src="custom.js" charset="utf-8"></script>
+
+<!-- CUSTOM -->
+<link href="/style-guide/css/fluig-style-guide-filter.min.css"
+	rel="stylesheet" type="text/css">
+<link href="/style-guide/css/fluig-style-guide-ratingstars.min.css"
+	rel="stylesheet" type="text/css">
+<script src="/style-guide/js/fluig-style-guide-filter.min.js"></script>
+<script src="/style-guide/js/fluig-style-guide-ratingstars.min.js"></script>
+</head>
+<body class="fluig-style-guide">
+
+	<form class="totvs-form grid vertical create-form-components ui-sortable t0" name="createFormComponents" style="padding-left: 10px; padding-right: 10px;">
+		<input type="hidden" id="nextmes" name="nextmes">
+		<div id="principal" name="principal">
+			<div class="page-header">
+				<header class="main-header clearfix">
+					<div class="wrapper">
+						<div class="row">
+							<!-- Logo esquerda -->
+							<div class="col-md-3 text-left"></div>
+							<!-- Logo Centro -->
+							<div class="col-md-6 title">
+								<font color="#004282">
+									<h1 class="text-center">i18n.translate("titulo")</h1>
+								</font>
+							</div>
+							<!-- Logo Direita -->
+							<div class="col-md-3 text-right">
+								<img id="companyLogoImg"
+									src="https://www.bancorbras.com.br/assets/img/logo-bancorbras.png"
+									class="">
+							</div>
+						</div>
+					</div>
+				</header>
+			</div>
+
+			<input type="hidden" id="htxt_idfluigsolicitante" name="htxt_idfluigsolicitante">
+			<input type="hidden" id="htxt_emailsolicitante" name="htxt_emailsolicitante">
+			<input type="hidden" id="htxt_dcadastrais" name="htxt_dcadastrais">
+
+			<div class="panel panel-default" id="dadoscolaborador">
+				<div class="panel-heading ">
+					<h3 class="panel-title">
+						<strong>i18n.translate("dados_colaborador")</strong>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="form-group col-md-4">
+							<label for="txt_data_solicitacao">i18n.translate("txt_datasolicitacao")</label>
+							<div class="input-group">
+								<span class="input-group-addon fs-cursor-pointer"> <span
+									class="fluigicon fluigicon-calendar icon-sm"></span>
+								</span>
+								<input type="text" class="form-control" name="txt_data_solicitacao" id="txt_data_solicitacao" readonly>
+							</div>
+						</div>
+						
+						<div class="form-group col-md-4">
+							<label for="txt_empresa">i18n.translate("txt_empresa")</label>
+							<div class="input-group">
+								<span class="input-group-addon fs-cursor-pointer"> <span
+									class="fluigicon fluigicon-company icon"></span>
+								</span>
+								<input type="text" class="form-control" name="txt_empresa" id="txt_empresa" readonly>
+							</div>
+						</div>
+						
+						<div class="form-group col-md-4">
+							<label for="txt_departamento">i18n.translate("txt_departamento")</label>
+							<div class="input-group">
+								<span class="input-group-addon fs-cursor-pointer"> <span
+									class="fluigicon fluigicon-user icon-sm"></span>
+								</span>
+								<input type="text" class="form-control" name="txt_departamento" id="txt_departamento" readonly>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="form-group col-md-12">
+							<label for="txt_nome_completo">i18n.translate("txt_nome_completo")</label>
+							<div class="input-group">
+								<span class="input-group-addon fs-cursor-pointer"> <span
+									class="fluigicon fluigicon-user icon-sm"></span>
+								</span>
+								<input type="text" class="form-control" name="txt_nome_completo" id="txt_nome_completo" readonly>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+	                    <div class="form-group col-md-12">
+	                         <label for="txt_email_corporativo">i18n.translate("txt_email_corporativo")</label>
+	                         <div class="input-group">
+								<span class="input-group-addon fs-cursor-pointer"> <span
+									class="flaticon flaticon-email icon-sm"></span>
+								</span>
+								<input type="text" class="form-control" name="txt_email_corporativo" id="txt_email_corporativo" readonly>
+							</div>
+	                    </div>
+                    </div>
+                    
+                    <div class="row">
+						<div class="form-group col-md-4">
+							<label for="txt_cargo">i18n.translate("txt_cargo")</label>
+							<div class="input-group">
+								<span class="input-group-addon fs-cursor-pointer"> <span
+									class="flaticon flaticon-account-box icon-sm"></span>
+								</span>
+								<input type="text" class="form-control" name="txt_cargo" id="txt_cargo" readonly>
+							</div>
+						</div>
+						
+						<div class="form-group col-md-4">
+							<label for="txt_matricula">i18n.translate("txt_matricula")</label>
+							<div class="input-group">
+								<span class="input-group-addon fs-cursor-pointer"> <span
+									class="flaticon flaticon-document-block icon-sm"></span>
+								</span>
+								<input type="text" class="form-control" name="txt_matricula" id="txt_matricula" readonly>
+							</div>
+						</div>
+	
+						<div class="form-group col-md-4">
+							<label for="txt_telefone">i18n.translate("txt_telefone")</label>
+							<div class="input-group">
+								<span class="input-group-addon fs-cursor-pointer"> <span
+									class="flaticon flaticon-phone icon-sm"></span>
+								</span>
+								<input type="text" class="form-control" name="txt_telefone" id="txt_telefone">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <div class="panel panel-default" id="dadoscadastrais">
+            <div class="panel-heading ">
+                <h3 class="panel-title">
+                    <strong>i18n.translate("dados_cadastrais")</strong>
+                </h3>
+            </div>
+            <div class="panel-body">
+	            <div class="form-group col-md-12">
+	                <label for="txt_nome_completo_dc">i18n.translate("txt_nome_completo_dc")</label>
+	                <div class="input-group">
+						<span class="input-group-addon fs-cursor-pointer"> <span
+							class="fluigicon fluigicon-company"></span>
+						</span>
+						<input type="text" class="form-control" name="txt_nome_completo_dc" id="txt_nome_completo_dc" readonly>
+					</div>
+	            </div>
+	            <div class="form-group col-md-4">
+	                <label for="op_estado_civil">i18n.translate("op_estado_civil")</label>
+                    <select class="form-control" id="op_estado_civil" name="op_estado_civil">
+                        <option value="casado">i18n.translate("casado")</option>
+                        <option value="divorciado">i18n.translate("divorciado")</option>
+                        <option value="matrial">i18n.translate("matrial")</option>
+                        <option value="desquitado">i18n.translate("desquitado")</option>
+                        <option value="solteiro">i18n.translate("solteiro")</option>
+                        <option value="viuvo">i18n.translate("viuvo")</option>
+                    </select>
+	            </div>
+	            <div class="form-group col-md-4">
+	                <label for="op_sexo">i18n.translate("op_sexo")</label>
+                    <select class="form-control" id="op_sexo" name="op_sexo">
+                        <option value="f">i18n.translate("feminino")</option>
+                        <option value="m">i18n.translate("masculino")</option>
+                        <option value="x">i18n.translate("anonimizado")</option>
+                    </select>
+	            </div>   
+	            <div class="form-group col-md-4">
+	                <label for="txt_telefone_celular">i18n.translate("txt_telefone_celular")</label>
+	                <div class="input-group">
+	                    <span class="input-group-addon fs-cursor-pointer"> <span 
+	                        class="flaticon flaticon-phone icon-sm"></span>
+	                    </span>
+	                    <input type="text" class="form-control" name="txt_telefone_celular" id="txt_telefone_celular">
+	                </div>
+	            </div>
+	            <div class="form-group col-md-4">
+	                <label for="op_cor_raca">i18n.translate("op_cor_raca")</label>
+                   <select class="form-control" id="op_cor_raca" name="op_cor_raca">
+                       <option value="indigena">i18n.translate("indigena")</option>
+                       <option value="branca">i18n.translate("branca")</option>
+                       <option value="preta">i18n.translate("preta")</option>
+                       <option value="amarela">i18n.translate("amarela")</option>
+                       <option value="parda">i18n.translate("parda")</option>
+                       <option value="nao_informado">i18n.translate("nao_informado")</option>
+                   </select>
+	            </div>
+	            <div class="form-group col-md-4">
+	                <label for="op_deficiencia">i18n.translate("op_deficiencia")</label>
+                    <select class="form-control" id="op_deficiencia" name="op_deficiencia">
+                        <option value="nao">i18n.translate("nao")</option>
+                        <option value="baixa_visao">i18n.translate("baixa_visao")</option>
+                        <option value="cegueira">i18n.translate("cegueira")</option>
+                        <option value="surdez">i18n.translate("surdez")</option>
+                        <option value="fisica">i18n.translate("fisica")</option>
+                        <option value="intelectual">i18n.translate("intelectual")</option>
+                        <option value="transtorno">i18n.translate("transtorno")</option>
+                        <option value="outro">i18n.translate("outro")</option>
+                   </select>
+	            </div>
+	            <div class="form-group col-md-4">
+	                <label for="op_grau_escolaridade">i18n.translate("op_grau_escolaridade")</label>
+                    <select class="form-control" id="op_grau_escolaridade" name="op_grau_escolaridade">
+                        <option value="analfabeto">i18n.translate("analfabeto")</option>
+                        <option value="ate_4_serie">i18n.translate("ate_4_serie")</option>
+                        <option value="4_serie_completa">i18n.translate("4_serie_completa")</option>
+                        <option value="primeiro_grau_incompleto">i18n.translate("primeiro_grau_incompleto")</option>
+                        <option value="primeiro_grau_completo">i18n.translate("primeiro_grau_completo")</option>
+                        <option value="segundo_grau_incompleto">i18n.translate("segundo_grau_incompleto")</option>
+                        <option value="segundo_grau_completo">i18n.translate("segundo_grau_completo")</option>
+                        <option value="superior_incompleto">i18n.translate("superior_incompleto")</option>
+                        <option value="superior_completo">i18n.translate("superior_completo")</option>
+                        <option value="mestrado_completo">i18n.translate("mestrado_completo")</option>
+                        <option value="doutorado_completo">i18n.translate("doutorado_completo")</option>
+                        <option value="pos_graduacao_incompleto">i18n.translate("pos_graduacao_incompleto")</option>
+                        <option value="pos_graduacao_completo">i18n.translate("pos_graduacao_completo")</option>
+                   </select>
+	            </div>
+	            <div class="form-group col-md-12">
+	                <label for="txt_email_pessoal">i18n.translate("txt_email_pessoal")</label>
+	                <div class="input-group">
+	                    <span class="input-group-addon fs-cursor-pointer"> <span 
+	                        class="flaticon flaticon-email icon-sm"></span>
+	                    </span>
+	                    <input type="text" class="form-control" name="txt_email_pessoal" id="txt_email_pessoal">
+	                </div>
+	            </div>  
+	            <div class="form-group col-md-5">
+	                <label for="txt_endereco">i18n.translate("txt_endereco")</label>
+	                <div class="input-group">
+	                    <span class="input-group-addon fs-cursor-pointer"> <span 
+	                        class="flaticon flaticon-send icon-sm"></span>
+	                    </span>
+	                    <input type="text" class="form-control" name="txt_endereco" id="txt_endereco">
+	                </div>
+	            </div>
+	            <div class="form-group col-md-1">
+	                <label for="txt_numero">i18n.translate("txt_numero")</label>
+	                <div class="input-group">
+	                    <span class="input-group-addon fs-cursor-pointer"> <span 
+	                        class="flaticon flaticon-send icon-sm"></span>
+	                    </span>
+	                    <input type="text" class="form-control" name="txt_numero" id="txt_numero">
+	                </div>
+	            </div>
+	            <div class="form-group col-md-3">
+	                <label for="txt_tipo_logradouro">i18n.translate("txt_tipo_logradouro")</label>
+	                <div class="input-group">
+	                    <span class="input-group-addon fs-cursor-pointer"> <span 
+	                        class="flaticon flaticon-send icon-sm"></span>
+	                    </span>
+	                    <input type="text" class="form-control" name="txt_tipo_logradouro" id="txt_tipo_logradouro">
+	                </div>
+	            </div>
+	            <div class="form-group col-md-3">
+	                <label for="txt_estado">i18n.translate("txt_estado")</label>
+	                <div class="input-group">
+	                    <span class="input-group-addon fs-cursor-pointer"> <span 
+	                        class="flaticon flaticon-send icon-sm"></span>
+	                    </span>
+	                    <input type="text" class="form-control" name="txt_estado" id="txt_estado">
+	                </div>
+	            </div>
+	            <div class="form-group col-md-4">
+	                <label for="txt_bairro">i18n.translate("txt_bairro")</label>
+	                <div class="input-group">
+	                    <span class="input-group-addon fs-cursor-pointer"> <span 
+	                        class="flaticon flaticon-send icon-sm"></span>
+	                    </span>
+	                    <input type="text" class="form-control" name="txt_bairro" id="txt_bairro">
+	                </div>
+	            </div>
+	            <div class="form-group col-md-4">
+	                <label for="txt_municipio">i18n.translate("txt_municipio")</label>
+	                <div class="input-group">
+	                    <span class="input-group-addon fs-cursor-pointer"> <span 
+	                        class="flaticon flaticon-send icon-sm"></span>
+	                    </span>
+	                    <input type="text" class="form-control" name="txt_municipio" id="txt_municipio">
+	                </div>
+	            </div>
+	            <div class="form-group col-md-4">
+	                <label for="txt_cep">i18n.translate("txt_cep")</label>
+	                <div class="input-group">
+	                    <span class="input-group-addon fs-cursor-pointer"> <span 
+	                        class="flaticon flaticon-send icon-sm"></span>
+	                    </span> <input type="text" class="form-control" name="txt_cep" id="txt_cep">
+	                </div>
+	            </div>
+			</div>
+        </div>
+    
+    	<div class="panel panel-default" id="dadoscolaborador">
+			<div class="panel-heading ">
+				<h3 class="panel-title">
+					<strong>i18n.translate("validacao_dados")</strong>
+				</h3>
+			</div>
+			<div class="panel-body">
+		            
+	            <div class="row">
+	            	<div class="col-md-12">
+	            		<label>i18n.translate("rd_dados_corretos")</label>
+	            	</div>
+	            </div>
+	            
+	            <div class="input-group-lg row">
+					<div class="col-md-2 form-group has-success">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input type="radio" name="rd_dados_corretos" id="rd_dados_corretos_sim" value="sim"/>
+							</span> 
+							<label class="control-label form-control" for="rd_dados_corretos_sim">i18n.translate("sim")</label>
+						</div>
+					</div>
+					
+					<div class="col-md-2 form-group has-error">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input type="radio" name="rd_dados_corretos" id="rd_dados_corretos_nao" value="nao">
+							</span>
+							<label class="control-label form-control" for="rd_dados_corretos_nao">i18n.translate("nao")</label>
+						</div>
+					</div>
+	            </div>
+        	</div>
+		</div>
+		
+        <div class="panel panel-default" id="Alteracao">
+            <div class="panel-heading ">
+                <h3 class="panel-title">
+                    <strong>i18n.translate("alteracao_dados")</strong>
+                </h3>
+            </div>
+        	<div class="panel-body">
+		        <label for="alteracao">i18n.translate("selecione_dados_atualizar"):</label><br>
+		        
+		        <div class="row">
+		        	<div class="col-md-2">
+				        <div class="checkbox">
+					        <label>
+					        	<input type="checkbox" name="ch_nome_completo" id="ch_nome_completo"> i18n.translate("ch_nome_completo")
+					        </label>
+					    </div>
+					</div>
+				   	<div class="col-md-2">
+					    <div class="checkbox">
+					        <label>
+					        	<input type="checkbox" name="ch_pussui_deficiencia" id="ch_pussui_deficiencia"> i18n.translate("ch_pussui_deficiencia")
+					        </label>
+					    </div>
+				    </div>
+			    </div>
+			    
+			    <div class="row">
+		        	<div class="col-md-2">
+				        <div class="checkbox">
+					        <label>
+					        	<input type="checkbox" name="ch_estado_civil" id="ch_estado_civil"> i18n.translate("ch_estado_civil")
+					        </label>
+					    </div>
+					</div>
+				   	<div class="col-md-2">
+					    <div class="checkbox">
+					        <label>
+					        	<input type="checkbox" name="ch_grau_escolaridade" id="ch_grau_escolaridade"> i18n.translate("ch_grau_escolaridade")
+					        </label>
+					    </div>
+				    </div>
+			    </div>
+			    
+			    <div class="row">
+		        	<div class="col-md-2">
+				        <div class="checkbox">
+					        <label>
+					        	<input type="checkbox" name="ch_telefone_celular" id="ch_telefone_celular"> i18n.translate("ch_telefone_celular")
+					        </label>
+					    </div>
+				   </div>
+				   <div class="col-md-2">
+					    <div class="checkbox">
+					        <label>
+					        	<input type="checkbox" name="ch_email_pessoal" id="ch_email_pessoal"> i18n.translate("ch_email_pessoal")
+					        </label>
+					    </div>
+				    </div>
+			    </div>
+			    
+			    <div class="row">
+		        	<div class="col-md-2">
+				        <div class="checkbox">
+					        <label>
+					        	<input type="checkbox" name="ch_cor_raca" id="ch_cor_raca"> i18n.translate("ch_cor_raca")
+					        </label>
+					    </div>
+					</div>
+				   	<div class="col-md-2">
+					    <div class="checkbox">
+					        <label>
+					        	<input type="checkbox" name="ch_endereco" id="ch_endereco"> i18n.translate("ch_endereco")
+					        </label>
+					    </div>
+				    </div>
+			    </div>
+	        </div>
+        </div>
+
+        <div class="panel panel-default panel-inline" id="Alteracao">
+            <div class="panel-heading ">
+                <h3 class="panel-title">
+                    <strong>i18n.translate("informacao_covid")</strong>
+                </h3>
+            </div>
+        	<div class="panel-body">
+		        
+		        <div class="row">
+			        <div class="col-md-12">
+			       		<label for="alteracao">i18n.translate("vacina_covid")</label><br>
+			        </div>
+		        </div>
+		        
+		        <div class="input-group row col-md-12">
+					<div class="col-md-2 form-group">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input type="radio" name="rd_vacina_covid" id="rd_vacina_covid_1dose" value="1dose"/>
+							</span> 
+							<label class="control-label form-control" for="rd_vacina_covid_1dose">i18n.translate("rd_vacina_covid_1dose")</label>
+						</div>
+					</div>
+					
+					<div class="col-md-2 form-group">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input type="radio" name="rd_vacina_covid" id="rd_vacina_covid_2dose" value="2dose"/>
+							</span>
+							<label class="control-label form-control" for="rd_vacina_covid_2dose">i18n.translate("rd_vacina_covid_2dose")</label>
+						</div>
+					</div>
+					
+					<div class="col-md-2 form-group">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input type="radio" name="rd_vacina_covid" id="rd_vacina_covid_reforco" value="reforco"/>
+							</span>
+							<label class="control-label form-control" for="rd_vacina_covid_reforco">i18n.translate("rd_vacina_covid_reforco")</label>
+						</div>
+					</div>
+					
+					<div class="col-md-2 form-group">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input type="radio" name="rd_vacina_covid" id="rd_vacina_covid_nenhuma" value="nenhuma"/>
+							</span>
+							<label class="control-label form-control" for="rd_vacina_covid_nenhuma">i18n.translate("rd_vacina_covid_nenhuma")</label>
+						</div>
+					</div>
+	            </div>
+	        </div>
+        </div>
+
+        <div class="panel panel-default" id="comprovante">
+            <div class="panel-heading ">
+                <h3 class="panel-title">
+                    <strong>i18n.translate("validacao_fopag")</strong>
+                </h3>
+            </div>
+            <div class="panel-body">
+			
+				<label for="alteracao">i18n.translate("rd_informacoes_acordo")</label><br>
+	
+	            <div class="input-group-lg row">
+					<div class="col-md-2 form-group has-success">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input type="radio" name="rd_informacoes_acordo" id="rd_informacoes_acordo_sim" value="sim"/>
+							</span> 
+							<label class="control-label form-control" for="rd_informacoes_acordo_sim">i18n.translate("sim")</label>
+						</div>
+					</div>
+					
+					<div class="col-md-2 form-group has-error">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input type="radio" name="rd_informacoes_acordo" id="rd_informacoes_acordo_nao" value="nao"/>
+							</span> 
+							<label class="control-label form-control" for="rd_informacoes_acordo_nao">i18n.translate("nao")</label>
+						</div>
+					</div>
+	            </div>
+	            
+	            <div class="row">
+	            	<div class="col-md-12">
+						<div class="form-group-md">
+							<label for="txta_informar_ajuste" >i18n.translate("txta_informar_ajuste")</label>
+							<textarea name="txta_informar_ajuste" id="txta_informar_ajuste" class="form-control" rows="3" placeholder="Informar o que precisa ser ajustado. Exemplo: comprovante de escolaridade em desacordo;"></textarea>
+						</div>
+	            	</div>
+	            </div>
+            </div>
+        </div>
+        
+        <div class="panel panel-default" id="integracao">
+            <div class="panel-heading ">
+                <h3 class="panel-title">
+                    <strong>i18n.translate("integracao_protheus")</strong>
+                </h3>
+            </div>
+            <div class="panel-body">
+        		<div class="row">
+	            	<div class="col-md-12">
+						<div class="form-group-md">
+							<label for="txta_integracao_protheus" >i18n.translate("txta_integracao_protheus")</label>
+							<textarea name="txta_integracao_protheus" id="txta_integracao_protheus" class="form-control" rows="3" readonly></textarea>
+						</div>
+	            	</div>
+	            </div>
+        	</div>
+       	</div>
+    </form>
+</body>
+</html>
