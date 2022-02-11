@@ -18,170 +18,213 @@
 </head>
 <body class="fluig-style-guide">
 
-	<form
-		class="totvs-form grid vertical create-form-components ui-sortable t0"
-		name="createFormComponents"
-		style="padding-left: 10px; padding-right: 10px;">
-		<input type="hidden" id="nextmes" name="nextmes">
-		<div id="principal" name="principal">
-			<div class="page-header">
-				<header class="main-header clearfix">
-					<div class="wrapper">
-						<div class="row">
-							<!-- Logo esquerda -->
-							<div class="col-md-3 text-left"></div>
-							<!-- Logo Centro -->
-							<div class="col-md-6 title">
-								<font color="#004282">
-									<h1 class="text-center">Atualização Cadastral Programada</h1>
-								</font>
-							</div>
-							<!-- Logo Direita -->
-							<div class="col-md-3 text-right">
-								<img id="companyLogoImg"
-									src="https://www.bancorbras.com.br/assets/img/logo-bancorbras.png"
-									class="">
-							</div>
+	<form class="totvs-form grid vertical create-form-components ui-sortable t0" name="createFormComponents" style="padding-left: 10px; padding-right: 10px;">
+		<div class="page-header">
+			<header class="main-header clearfix">
+				<div class="wrapper">
+					<div class="row">
+						<!-- Logo esquerda -->
+						<div class="col-md-3 text-left"></div>
+						<!-- Logo Centro -->
+						<div class="col-md-6 title">
+							<font color="#004282">
+								<h1 class="text-center">i18n.translate("titulo")</h1>
+							</font>
+						</div>
+						<!-- Logo Direita -->
+						<div class="col-md-3 text-right">
+							<img id="companyLogoImg" src="https://www.bancorbras.com.br/assets/img/logo-bancorbras.png" class="">
 						</div>
 					</div>
-				</header>
-			</div>
-
-			<input type="hidden" id="idfluigsolicitante" name="idfluigsolicitante">
-			<input type="hidden" id="emailsolicitante" name="emailsolicitante">
-
-			<div class="panel panel-default" id="dadoscolaborador">
-				<div class="panel-heading ">
-					<h3 class="panel-title">
-						<strong>Dados do colaborador</strong>
-					</h3>
 				</div>
-				<div class="panel-body">
+			</header>
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading ">
+				<h3 class="panel-title">
+					<strong>i18n.translate("dados_colaborador")</strong>
+				</h3>
+			</div>
+			<div class="panel-body">
+				<div class="row">
 					<div class="form-group col-md-4">
-						<label for="datasolicitacao">Data da solicitação</label>
+						<label for="txt_data_solicitacao">i18n.translate("txt_datasolicitacao")</label>
 						<div class="input-group">
-							<span class="input-group-addon fs-cursor-pointer"> <span
+							<span class="input-group-addon "> <span
 								class="fluigicon fluigicon-calendar icon-sm"></span>
-							</span> <input type="date" class="form-control" name="datasolicitacao"
-								id="datasolicitacao" readonly>
+							</span>
+							<input type="text" class="form-control" name="txt_data_solicitacao" id="txt_data_solicitacao" readonly>
 						</div>
 					</div>
+					
 					<div class="form-group col-md-4">
-						<label for="empresa">Empresa</label>
+						<label for="txt_empresa">i18n.translate("txt_empresa")</label>
 						<div class="input-group">
-							<span class="input-group-addon fs-cursor-pointer"> <span
+							<span class="input-group-addon "> <span
 								class="fluigicon fluigicon-company icon"></span>
-							</span> <input type="text" class="form-control" name="empresa"
-								id="empresa" readonly>
+							</span>
+							<input type="text" class="form-control" name="txt_empresa" id="txt_empresa" readonly>
 						</div>
 					</div>
+					
 					<div class="form-group col-md-4">
-						<label for="departamento">Departamento</label>
+						<label for="txt_departamento">i18n.translate("txt_departamento")</label>
 						<div class="input-group">
-							<span class="input-group-addon fs-cursor-pointer"> <span
+							<span class="input-group-addon "> <span
 								class="fluigicon fluigicon-user icon-sm"></span>
-							</span> <input type="text" class="form-control" name="departamento"
-								id="departamento" readonly>
+							</span>
+							<input type="text" class="form-control" name="txt_departamento" id="txt_departamento" readonly>
 						</div>
 					</div>
+				</div>
+				
+				<div class="row">
 					<div class="form-group col-md-12">
-						<label for="nomecompleto">Nome completo</label>
+						<label for="txt_nome_completo">i18n.translate("txt_nome_completo")</label>
 						<div class="input-group">
-							<span class="input-group-addon fs-cursor-pointer"> <span
+							<span class="input-group-addon "> <span
 								class="fluigicon fluigicon-user icon-sm"></span>
-							</span> <input type="zoom" class="form-control" name="nomecompleto"
-								readonly dataset="colleague" zoomvalue="colleagueName"
-								datasetvalue="colleagueName"
-								data-zoom="{'displayKey':'colleagueName','datasetId':'colleague','fields':[{'field':'colleagueName','label':'colleagueName','standard':true}]}">
+							</span>
+							<input type="text" class="form-control" name="txt_nome_completo" id="txt_nome_completo" readonly>
 						</div>
 					</div>
+				</div>
+				
+				<div class="row">
                     <div class="form-group col-md-12">
-                         <label for="emailcorp">E-mail corporativo</label>
+                         <label for="txt_email_corporativo">i18n.translate("txt_email_corporativo")</label>
                          <div class="input-group">
-                             <span class="input-group-addon fs-cursor-pointer">
-                                 <span class="fluigicon fluigicon-user icon-sm"></span>
-                             </span>
-                             <input type="zoom" class="form-control" name="emailcorp"
-								readonly dataset="colleague" zoomvalue="colleagueEmail"
-								datasetvalue="colleagueEmail"
-								data-zoom="{'displayKey':'colleagueEmail','datasetId':'colleague','fields':[{'field':'colleagueEmail','label':'colleagueEmail','standard':true}]}">
-                         </div>
+							<span class="input-group-addon "> <span
+								class="flaticon flaticon-email icon-sm"></span>
+							</span>
+							<input type="text" class="form-control" name="txt_email_corporativo" id="txt_email_corporativo" readonly>
+						</div>
                     </div>
+                   </div>
+                   
+                   <div class="row">
 					<div class="form-group col-md-4">
-						<label for="cargo">Cargo</label>
+						<label for="txt_cargo">i18n.translate("txt_cargo")</label>
 						<div class="input-group">
-							<span class="input-group-addon fs-cursor-pointer"> <span
-								class="fluigicon fluigicon-key icon-sm"></span>
-							</span> <input type="text" class="form-control" name="cargo" id="cargo"
-								readonly>
+							<span class="input-group-addon "> <span
+								class="flaticon flaticon-account-box icon-sm"></span>
+							</span>
+							<input type="text" class="form-control" name="txt_cargo" id="txt_cargo" readonly>
 						</div>
 					</div>
+					
 					<div class="form-group col-md-4">
-						<label for="matricula">Matrícula</label>
+						<label for="txt_matricula">i18n.translate("txt_matricula")</label>
 						<div class="input-group">
-							<span class="input-group-addon fs-cursor-pointer"> <span
-								class="fluigicon fluigicon-company"></span>
-							</span> <input type="text" class="form-control" name="matricula"
-								id="matricula" readonly >
+							<span class="input-group-addon "> <span
+								class="flaticon flaticon-document-block icon-sm"></span>
+							</span>
+							<input type="text" class="form-control" name="txt_matricula" id="txt_matricula" readonly>
 						</div>
 					</div>
 
-
 					<div class="form-group col-md-4">
-						<label for="telefone">Telefone</label>
+						<label for="txt_telefone">i18n.translate("txt_telefone")</label>
 						<div class="input-group">
-							<span class="input-group-addon fs-cursor-pointer"> <span
-								class="fluigicon fluigicon-company"></span>
-							</span> <input type="text" class="form-control" name="telefone"
-								id="telefone">
+							<span class="input-group-addon "> <span
+								class="flaticon flaticon-phone icon-sm"></span>
+							</span>
+							<input type="text" class="form-control" name="txt_telefone" id="txt_telefone">
 						</div>
 					</div>
 				</div>
 			</div>
-    </form>   
-<!--Emissão da Atualização Cadastral-->
-<form class="totvs-form grid vertical create-form-components ui-sortable t0"
-    name="createFormComponents"
-    style="padding-left: 10px; padding-right: 10px;">
-        <input type="hidden" id="Ecadastral" name="Ecadastral">
-		<div class="panel panel-default" id="Emissao">
+		</div>
+
+		<div class="panel panel-default">
             <div class="panel-heading ">
                 <h3 class="panel-title">
-                    <strong>Emissao da Atualização Cadastral</strong>
+                    <strong>i18n.translate("emissao_cadastral")</strong>
                 </h3>
             </div>
-			<div class="form-group col-md-4"><br>
-				<label for="Colaboradores">Colaboradores</label><br>
-                <label for="Empresas">Empresas</label>
-                <div class="input-group">
-                    <select class="form-control">
-                        <option>BEP</option>
-                        <option>CBTUR</option>
-                        <option>BANCORTUR</option>
-                        <option>BCS</option>
-                        <option>BAC</option>
-                        <option>INSTITUTO</option>
-						<option>CSC</option>
-                        <option>CRC</option>
-                    </select>
-                </div>
-            </div>
-		</div>
-		<table class="table table-bordered">
-			<tr>
-			<th>Empresa</th>
-			<th>Filial</th>
-			<th>Matricula</th>
-			<th>Nome</th>
-			<th>Cargo</th>
-			<th>E-mail</th>
-			</tr>
-		</table>
-		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">Enviar</button>
+            <div class="panel-body">
+					
+				<div class="row">
+					<div class="col-md-12">
+						<label for="Colaboradores">i18n.translate("colaboradores")</label>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-3">
+						<label for="z_empresa">i18n.translate("z_empresa")</label>
+						<input type="hidden" id="z_empresa_cod" name="z_empresa_cod"/>
+						<input type="zoom" id="z_empresa"
+								name="z_empresa"
+								data-zoom="{
+								'displayKey':'descricao',
+								'datasetId':'dsEmpresas',
+								'maximumSelectionLength':'1',
+								'fields':[
+										{
+										'field':'id',
+										'label':'Codigo'
+										},
+										{
+										'field':'descricao',
+										'label':'Descricao'
+										}]
+								}" 
+						/>
+					</div>
+				</div>
+	            <br>
+	            <div class="row">
+					<div class="col-ms-12">
+						
+						<table tablename="tbl_colaboradores" name="tbl_colaboradores" id="tbl_colaboradores" class="table table-condensed table-striped" noaddbutton="true" nodeletebutton="true">
+							<thead>
+								<tr>
+									<th class="col-sm-2 col-md-1">i18n.translate("txt_tbl_empresa")</th>
+									<th class="col-sm-2 col-md-2">i18n.translate("txt_tbl_Filial")</th>
+									<th class="col-sm-2 col-md-2">i18n.translate("txt_tbl_matricula")</th>
+									<th class="col-sm-1 col-md-3">i18n.translate("txt_tbl_nome")</th>
+									<th class="col-sm-2 col-md-2">i18n.translate("txt_tbl_cargo")</th>
+									<th class="col-sm-2 col-md-2">i18n.translate("txt_tbl_email")</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="tr_linha">
+									<td>
+										<input type="hidden" id="txt_tbl_empresa_cod" name="txt_tbl_empresa_cod" readonly/>
+										<input type="text" class="form-control" id="txt_tbl_empresa" name="txt_tbl_empresa" readonly/>
+									</td>
+									
+									<td>
+										<input type="text" class="form-control" id="txt_tbl_Filial" name="txt_tbl_Filial" readonly/>
+									</td>
+									
+									<td>
+										<input type="text" class="form-control" id="txt_tbl_matricula" name="txt_tbl_matricula" readonly/>
+									</td>
+									
+									<td>
+										<input type="text" class="form-control" id="txt_tbl_nome" name="txt_tbl_nome" readonly/>
+									</td>
+									
+									<td>
+										<input type="text" class="form-control" id="txt_tbl_cargo" name="txt_tbl_cargo" readonly/>
+									</td>
+									
+									<td>
+										<input type="text" class="form-control" id="txt_tbl_email" name="txt_tbl_email" readonly/>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+	            
 			</div>
 		</div>
-</form>
-
+		
+	</form>
+</body>
+</html>
 	
