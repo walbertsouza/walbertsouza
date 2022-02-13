@@ -19,4 +19,7 @@ $(document).ready(
 		$("#op_cor_raca").attr("disabled", true);
 		$("#op_deficiencia").attr("disabled", true);
 		$("#op_grau_escolaridade").attr("disabled", true);
+		
+		// TODO - desabilitar
+		$("#htxt_usuario_solicitacao").val("walbert.souza")
 });

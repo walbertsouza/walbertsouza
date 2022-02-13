@@ -5,6 +5,7 @@ function validaPrazoLimite(){
 	
 	log.info("[atualizacao_cadastral][validaPrazoLimite] INIT");
 	
+	//TODO - Ver qual será o usuário admin
 	var c1 = DatasetFactory.createConstraint("userSecurityId", "walbert.souza", "walbert.souza", ConstraintType.MUST);
 
 	var constraints = new Array(c1);
@@ -12,11 +13,11 @@ function validaPrazoLimite(){
 	var datasetPrazoLimite = DatasetFactory.getDataset("dsEmissaoCadastralCadastroPrazoLimite", null, constraints, null);
 	
 	if (!!datasetPrazoLimite && datasetPrazoLimite.rowsCount > 0){
-		var dataLimite = datasetPrazoLimite.getValue(0, "txt_prazo_limite");
+		var dataLimite = String(datasetPrazoLimite.getValue(0, "txt_prazo_limite"));
 		
 		// Trabalha data limite
-		dataLimite = dataLimite.split("/");
-		datalimite = parseInt(dataLimite[2] + "" + dataLimite[1] + "" + dataLimite[0]);
+		dataLimite = dataLimite.trim().split("/");
+		var dataLimite = parseInt(dataLimite[2] + "" + dataLimite[1] + "" + dataLimite[0]);
 		
 		// Pega data de hoje
 		var today = new Date();
@@ -35,7 +36,7 @@ function validaPrazoLimite(){
 		log.info("[atualizacao_cadastral][validaPrazoLimite] Data Limite = " + dataLimite);
 		log.info("[atualizacao_cadastral][validaPrazoLimite] Data Atual = " + dataAtual);
 		
-		if (dataLimite < dataAtual){
+		if (dataLimite > dataAtual){
 			log.info("[atualizacao_cadastral][validaPrazoLimite] Data limite nao ultrapassada");
 			return true;
 		}

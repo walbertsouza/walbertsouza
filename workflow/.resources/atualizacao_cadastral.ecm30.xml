@@ -28,7 +28,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>atualizacao_cadastral</processId>
-      <version>6</version>
+      <version>31</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>235480</formId>
@@ -162,7 +162,7 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>Grupo</engineAllocationId>
+      <engineAllocationId>Pool Grupo</engineAllocationId>
       <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;FOPAG&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
@@ -551,7 +551,7 @@
         <companyId>1</companyId>
         <processId>atualizacao_cadastral</processId>
         <expressionOrder>1</expressionOrder>
-        <version>6</version>
+        <version>31</version>
         <sequence>7</sequence>
       </conditionProcessStatePK>
       <condition>validaPrazoLimite() == true</condition>
@@ -563,7 +563,7 @@
         <companyId>1</companyId>
         <processId>atualizacao_cadastral</processId>
         <expressionOrder>2</expressionOrder>
-        <version>6</version>
+        <version>31</version>
         <sequence>7</sequence>
       </conditionProcessStatePK>
       <condition>validaPrazoLimite() == false</condition>
@@ -575,7 +575,7 @@
         <companyId>1</companyId>
         <processId>atualizacao_cadastral</processId>
         <expressionOrder>1</expressionOrder>
-        <version>6</version>
+        <version>31</version>
         <sequence>13</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;rd_informacoes_acordo&quot;) ==&quot;sim&quot;</condition>
@@ -587,7 +587,7 @@
         <companyId>1</companyId>
         <processId>atualizacao_cadastral</processId>
         <expressionOrder>2</expressionOrder>
-        <version>6</version>
+        <version>31</version>
         <sequence>13</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;rd_informacoes_acordo&quot;) ==&quot;nao&quot;</condition>
@@ -800,6 +800,7 @@ function validaPrazoLimite(){&#xd;
 	&#xd;
 	log.info(&quot;[atualizacao_cadastral][validaPrazoLimite] INIT&quot;);&#xd;
 	&#xd;
+	//TODO - Ver qual será o usuário admin&#xd;
 	var c1 = DatasetFactory.createConstraint(&quot;userSecurityId&quot;, &quot;walbert.souza&quot;, &quot;walbert.souza&quot;, ConstraintType.MUST);&#xd;
 &#xd;
 	var constraints = new Array(c1);&#xd;
@@ -807,11 +808,11 @@ function validaPrazoLimite(){&#xd;
 	var datasetPrazoLimite = DatasetFactory.getDataset(&quot;dsEmissaoCadastralCadastroPrazoLimite&quot;, null, constraints, null);&#xd;
 	&#xd;
 	if (!!datasetPrazoLimite &amp;&amp; datasetPrazoLimite.rowsCount &gt; 0){&#xd;
-		var dataLimite = datasetPrazoLimite.getValue(0, &quot;txt_prazo_limite&quot;);&#xd;
+		var dataLimite = String(datasetPrazoLimite.getValue(0, &quot;txt_prazo_limite&quot;));&#xd;
 		&#xd;
 		// Trabalha data limite&#xd;
-		dataLimite = dataLimite.split(&quot;/&quot;);&#xd;
-		datalimite = parseInt(dataLimite[2] + &quot;&quot; + dataLimite[1] + &quot;&quot; + dataLimite[0]);&#xd;
+		dataLimite = dataLimite.trim().split(&quot;/&quot;);&#xd;
+		var dataLimite = parseInt(dataLimite[2] + &quot;&quot; + dataLimite[1] + &quot;&quot; + dataLimite[0]);&#xd;
 		&#xd;
 		// Pega data de hoje&#xd;
 		var today = new Date();&#xd;
@@ -830,7 +831,7 @@ function validaPrazoLimite(){&#xd;
 		log.info(&quot;[atualizacao_cadastral][validaPrazoLimite] Data Limite = &quot; + dataLimite);&#xd;
 		log.info(&quot;[atualizacao_cadastral][validaPrazoLimite] Data Atual = &quot; + dataAtual);&#xd;
 		&#xd;
-		if (dataLimite &lt; dataAtual){&#xd;
+		if (dataLimite &gt; dataAtual){&#xd;
 			log.info(&quot;[atualizacao_cadastral][validaPrazoLimite] Data limite nao ultrapassada&quot;);&#xd;
 			return true;&#xd;
 		}&#xd;
@@ -912,7 +913,7 @@ function validaPrazoLimite(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>atualizacao_cadastral</processId>
-        <version>6</version>
+        <version>31</version>
         <linkSequence>6</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -923,7 +924,7 @@ function validaPrazoLimite(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>atualizacao_cadastral</processId>
-        <version>6</version>
+        <version>31</version>
         <linkSequence>12</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -934,7 +935,7 @@ function validaPrazoLimite(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>atualizacao_cadastral</processId>
-        <version>6</version>
+        <version>31</version>
         <linkSequence>16</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -945,7 +946,7 @@ function validaPrazoLimite(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>atualizacao_cadastral</processId>
-        <version>6</version>
+        <version>31</version>
         <linkSequence>26</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
