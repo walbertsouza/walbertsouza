@@ -2557,7 +2557,7 @@
     <fonts name="Arial" size="8"/>
     <fonts bold="true" name="Arial" size="8"/>
   </pi:Diagram>
-  <bpmn2:BpmnProcess author="" cardIndex="235480" category="" complementsLevel="1" expedient="Default" extendedFields="&lt;list/&gt;" formSource="server" id="atualizacao_cadastral" instruction="" keyWord="" name="atualizacao_cadastral" notifyRequisitionerComplements="true" notifyResponsibleComplements="true" serverId="Bancobras - Dev" version="31" volume="Default"/>
+  <bpmn2:BpmnProcess author="" cardIndex="235480" category="" complementsLevel="1" expedient="Default" extendedFields="&lt;list/&gt;" formSource="server" id="atualizacao_cadastral" instruction="" keyWord="" name="atualizacao_cadastral" notifyRequisitionerComplements="true" notifyResponsibleComplements="true" serverId="Bancobras - Dev" version="32" volume="Default"/>
   <bpmn2:BpmnPool cores="FFFFFF" id="pool1" name="Atualiza&#231;&#227;o Cadastral"/>
   <bpmn2:BpmnSwimLane cores="9F9F9F" id="swimlane2" name="Solicitante"/>
   <bpmn2:BpmnSwimLane cores="C0C0C0" id="swimlane3" name="Colaboradores"/>
@@ -2575,7 +2575,7 @@
   <bpmn2:SequenceFlow atividadeFluxo="" atividadeRetorno="" extendedFields="&lt;list/&gt;" id="flow16" name="V&#225;lido" sourceRef="exclusivegateway13" targetRef="servicetask17"/>
   <bpmn2:BpmnTask attachedEvents="intermediateerror18" authNotify="true" emAtrasoNotificarResponsavel="false" emAtrasoNotificarResponsavelFrequencia="0.0" emAtrasoNotificarResponsavelTolerancia="0.0" esforcoCalculo="0" executionAttempts="0" executionSucessfulMessage="Integra&#231;&#227;o executada com sucesso" executionType="1" expediente="" frequency="0" id="servicetask17" incoming="flow16 flow21" loopType="0" managerMechanism="" name="Integrar no Protheus" outgoing="flow23" scriptFileName="atualizacao_cadastral.servicetask17.js" selecionaColaboradores="1" serviceName="" type="82"/>
   <bpmn2:BpmnIntermediateEvent id="intermediateerror18" name="Intermedi&#225;rio" outgoing="flow20" parentTask="servicetask17" sequenceAttached="17" signalId="0" type="43"/>
-  <bpmn2:BpmnTask authNotify="true" esforcoCalculo="0" executionAttempts="0" expediente="" frequency="0" id="task19" incoming="flow20" loopType="0" name="Tratar erro de integra&#231;&#227;o" outgoing="flow21" selecionaColaboradores="1" type="80"/>
+  <bpmn2:BpmnTask authNotify="true" esforcoCalculo="0" executionAttempts="0" expediente="" frequency="0" id="task19" incoming="flow20" loopType="0" managerAssignmentControllerString="&lt;org.eclipse.bpmn2.impl.AssignmentControllerPoolGroup&gt;&#10;  &lt;groupId&gt;FOPAG&lt;/groupId&gt;&#10;  &lt;mechanismName&gt;Pool Grupo&lt;/mechanismName&gt;&#10;&lt;/org.eclipse.bpmn2.impl.AssignmentControllerPoolGroup&gt;" managerMechanism="Pool Grupo" name="Tratar erro de integra&#231;&#227;o" outgoing="flow21" selecionaColaboradores="1" type="80"/>
   <bpmn2:SequenceFlow atividadeFluxo="" atividadeRetorno="" extendedFields="&lt;list/&gt;" id="flow20" name="" sourceRef="intermediateerror18" targetRef="task19"/>
   <bpmn2:SequenceFlow atividadeFluxo="" atividadeRetorno="" extendedFields="&lt;list/&gt;" id="flow21" name="" sourceRef="task19" targetRef="servicetask17"/>
   <bpmn2:BpmnEndEvent id="endevent22" incoming="flow23" name="Atualiza&#231;&#227;o cadastral conclu&#237;da" signalId="0" type="60"/>

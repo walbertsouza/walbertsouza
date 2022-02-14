@@ -165,6 +165,7 @@
 	            <div class="form-group col-md-4">
 	                <label for="op_estado_civil">i18n.translate("op_estado_civil")</label>
                     <select class="form-control" id="op_estado_civil" name="op_estado_civil">
+                    	<option value=""></option>
                         <option value="casado">i18n.translate("casado")</option>
                         <option value="divorciado">i18n.translate("divorciado")</option>
                         <option value="matrial">i18n.translate("matrial")</option>
@@ -176,6 +177,7 @@
 	            <div class="form-group col-md-4">
 	                <label for="op_sexo">i18n.translate("op_sexo")</label>
                     <select class="form-control" id="op_sexo" name="op_sexo">
+                    	<option value=""></option>
                         <option value="f">i18n.translate("feminino")</option>
                         <option value="m">i18n.translate("masculino")</option>
                         <option value="x">i18n.translate("anonimizado")</option>
@@ -192,18 +194,20 @@
 	            </div>
 	            <div class="form-group col-md-4">
 	                <label for="op_cor_raca">i18n.translate("op_cor_raca")</label>
-                   <select class="form-control" id="op_cor_raca" name="op_cor_raca">
-                       <option value="indigena">i18n.translate("indigena")</option>
-                       <option value="branca">i18n.translate("branca")</option>
-                       <option value="preta">i18n.translate("preta")</option>
-                       <option value="amarela">i18n.translate("amarela")</option>
-                       <option value="parda">i18n.translate("parda")</option>
-                       <option value="nao_informado">i18n.translate("nao_informado")</option>
-                   </select>
+                   	<select class="form-control" id="op_cor_raca" name="op_cor_raca">
+                   		<option value=""></option>
+                       	<option value="indigena">i18n.translate("indigena")</option>
+                       	<option value="branca">i18n.translate("branca")</option>
+                      	<option value="preta">i18n.translate("preta")</option>
+                       	<option value="amarela">i18n.translate("amarela")</option>
+                       	<option value="parda">i18n.translate("parda")</option>
+                       	<option value="nao_informado">i18n.translate("nao_informado")</option>
+                   	</select>
 	            </div>
 	            <div class="form-group col-md-4">
 	                <label for="op_deficiencia">i18n.translate("op_deficiencia")</label>
                     <select class="form-control" id="op_deficiencia" name="op_deficiencia">
+                    	<option value=""></option>
                         <option value="nao">i18n.translate("nao")</option>
                         <option value="baixa_visao">i18n.translate("baixa_visao")</option>
                         <option value="cegueira">i18n.translate("cegueira")</option>
@@ -217,6 +221,7 @@
 	            <div class="form-group col-md-4">
 	                <label for="op_grau_escolaridade">i18n.translate("op_grau_escolaridade")</label>
                     <select class="form-control" id="op_grau_escolaridade" name="op_grau_escolaridade">
+                    	<option value=""></option>
                         <option value="analfabeto">i18n.translate("analfabeto")</option>
                         <option value="ate_4_serie">i18n.translate("ate_4_serie")</option>
                         <option value="4_serie_completa">i18n.translate("4_serie_completa")</option>
@@ -241,7 +246,7 @@
 	                    <input type="text" class="form-control" name="txt_email_pessoal" id="txt_email_pessoal" readonly>
 	                </div>
 	            </div>  
-	            <div class="form-group col-md-5">
+	            <div class="form-group col-md-3">
 	                <label for="txt_endereco">i18n.translate("txt_endereco")</label>
 	                <div class="input-group">
 	                    <span class="input-group-addon "> <span 
@@ -250,7 +255,7 @@
 	                    <input type="text" class="form-control" name="txt_endereco" id="txt_endereco" readonly>
 	                </div>
 	            </div>
-	            <div class="form-group col-md-1">
+	            <div class="form-group col-md-2">
 	                <label for="txt_numero">i18n.translate("txt_numero")</label>
 	                <div class="input-group">
 	                    <span class="input-group-addon "> <span 
@@ -306,7 +311,7 @@
 			</div>
         </div>
     
-    	<div class="panel panel-default" id="dadoscolaborador">
+    	<div class="panel panel-default" id="divValidacaoDados">
 			<div class="panel-heading ">
 				<h3 class="panel-title">
 					<strong>i18n.translate("validacao_dados")</strong>
@@ -324,7 +329,7 @@
 					<div class="col-md-2 form-group has-success">
 						<div class="input-group">
 							<span class="input-group-addon">
-								<input type="radio" name="rd_dados_corretos" id="rd_dados_corretos_sim" value="sim"/>
+								<input type="radio" name="rd_dados_corretos" id="rd_dados_corretos_sim" value="sim" onclick="validacaoDados()"/>
 							</span> 
 							<label class="control-label form-control" for="rd_dados_corretos_sim">i18n.translate("sim")</label>
 						</div>
@@ -333,7 +338,7 @@
 					<div class="col-md-2 form-group has-error">
 						<div class="input-group">
 							<span class="input-group-addon">
-								<input type="radio" name="rd_dados_corretos" id="rd_dados_corretos_nao" value="nao">
+								<input type="radio" name="rd_dados_corretos" id="rd_dados_corretos_nao" value="nao" onclick="validacaoDados()">
 							</span>
 							<label class="control-label form-control" for="rd_dados_corretos_nao">i18n.translate("nao")</label>
 						</div>
@@ -342,7 +347,7 @@
         	</div>
 		</div>
 		
-        <div class="panel panel-default" id="Alteracao">
+        <div class="panel panel-default" id="divAlteracaoDados">
             <div class="panel-heading ">
                 <h3 class="panel-title">
                     <strong>i18n.translate("alteracao_dados")</strong>
@@ -355,14 +360,14 @@
 		        	<div class="col-md-2">
 				        <div class="checkbox">
 					        <label>
-					        	<input type="checkbox" name="ch_nome_completo" id="ch_nome_completo"> i18n.translate("ch_nome_completo")
+					        	<input type="checkbox" name="ch_nome_completo" id="ch_nome_completo" onclick="habilitarAlteracao(this.id)"> i18n.translate("ch_nome_completo")
 					        </label>
 					    </div>
 					</div>
 				   	<div class="col-md-2">
 					    <div class="checkbox">
 					        <label>
-					        	<input type="checkbox" name="ch_pussui_deficiencia" id="ch_pussui_deficiencia"> i18n.translate("ch_pussui_deficiencia")
+					        	<input type="checkbox" name="ch_possui_deficiencia" id="ch_possui_deficiencia" onclick="habilitarAlteracao(this.id)"> i18n.translate("ch_possui_deficiencia")
 					        </label>
 					    </div>
 				    </div>
@@ -372,14 +377,14 @@
 		        	<div class="col-md-2">
 				        <div class="checkbox">
 					        <label>
-					        	<input type="checkbox" name="ch_estado_civil" id="ch_estado_civil"> i18n.translate("ch_estado_civil")
+					        	<input type="checkbox" name="ch_estado_civil" id="ch_estado_civil" onclick="habilitarAlteracao(this.id)"> i18n.translate("ch_estado_civil")
 					        </label>
 					    </div>
 					</div>
 				   	<div class="col-md-2">
 					    <div class="checkbox">
 					        <label>
-					        	<input type="checkbox" name="ch_grau_escolaridade" id="ch_grau_escolaridade"> i18n.translate("ch_grau_escolaridade")
+					        	<input type="checkbox" name="ch_grau_escolaridade" id="ch_grau_escolaridade" onclick="habilitarAlteracao(this.id)"> i18n.translate("ch_grau_escolaridade")
 					        </label>
 					    </div>
 				    </div>
@@ -389,14 +394,14 @@
 		        	<div class="col-md-2">
 				        <div class="checkbox">
 					        <label>
-					        	<input type="checkbox" name="ch_telefone_celular" id="ch_telefone_celular"> i18n.translate("ch_telefone_celular")
+					        	<input type="checkbox" name="ch_telefone_celular" id="ch_telefone_celular" onclick="habilitarAlteracao(this.id)"> i18n.translate("ch_telefone_celular")
 					        </label>
 					    </div>
 				   </div>
 				   <div class="col-md-2">
 					    <div class="checkbox">
 					        <label>
-					        	<input type="checkbox" name="ch_email_pessoal" id="ch_email_pessoal"> i18n.translate("ch_email_pessoal")
+					        	<input type="checkbox" name="ch_email_pessoal" id="ch_email_pessoal" onclick="habilitarAlteracao(this.id)"> i18n.translate("ch_email_pessoal")
 					        </label>
 					    </div>
 				    </div>
@@ -406,14 +411,14 @@
 		        	<div class="col-md-2">
 				        <div class="checkbox">
 					        <label>
-					        	<input type="checkbox" name="ch_cor_raca" id="ch_cor_raca"> i18n.translate("ch_cor_raca")
+					        	<input type="checkbox" name="ch_cor_raca" id="ch_cor_raca" onclick="habilitarAlteracao(this.id)"> i18n.translate("ch_cor_raca")
 					        </label>
 					    </div>
 					</div>
 				   	<div class="col-md-2">
 					    <div class="checkbox">
 					        <label>
-					        	<input type="checkbox" name="ch_endereco" id="ch_endereco"> i18n.translate("ch_endereco")
+					        	<input type="checkbox" name="ch_endereco" id="ch_endereco" onclick="habilitarAlteracao(this.id)"> i18n.translate("ch_endereco")
 					        </label>
 					    </div>
 				    </div>
@@ -421,7 +426,7 @@
 	        </div>
         </div>
 
-        <div class="panel panel-default panel-inline" id="Alteracao">
+        <div class="panel panel-default panel-inline" id="divInfoCovid">
             <div class="panel-heading ">
                 <h3 class="panel-title">
                     <strong>i18n.translate("informacao_covid")</strong>
@@ -431,7 +436,7 @@
 		        
 		        <div class="row">
 			        <div class="col-md-12">
-			       		<label for="alteracao">i18n.translate("vacina_covid")</label><br>
+			       		<label for="alteracao">i18n.translate("rd_vacina_covid")</label><br>
 			        </div>
 		        </div>
 		        
@@ -475,7 +480,7 @@
 	        </div>
         </div>
 
-        <div class="panel panel-default" id="comprovante">
+        <div class="panel panel-default" id="divValidacaoFOPAG">
             <div class="panel-heading ">
                 <h3 class="panel-title">
                     <strong>i18n.translate("validacao_fopag")</strong>
@@ -489,7 +494,7 @@
 					<div class="col-md-2 form-group has-success">
 						<div class="input-group">
 							<span class="input-group-addon">
-								<input type="radio" name="rd_informacoes_acordo" id="rd_informacoes_acordo_sim" value="sim"/>
+								<input type="radio" name="rd_informacoes_acordo" id="rd_informacoes_acordo_sim" value="sim" onclick="validacaoFOPAG()"/>
 							</span> 
 							<label class="control-label form-control" for="rd_informacoes_acordo_sim">i18n.translate("sim")</label>
 						</div>
@@ -498,14 +503,14 @@
 					<div class="col-md-2 form-group has-error">
 						<div class="input-group">
 							<span class="input-group-addon">
-								<input type="radio" name="rd_informacoes_acordo" id="rd_informacoes_acordo_nao" value="nao"/>
+								<input type="radio" name="rd_informacoes_acordo" id="rd_informacoes_acordo_nao" value="nao" onclick="validacaoFOPAG()"/>
 							</span> 
 							<label class="control-label form-control" for="rd_informacoes_acordo_nao">i18n.translate("nao")</label>
 						</div>
 					</div>
 	            </div>
 	            
-	            <div class="row">
+	            <div class="row" id="divInformarAjuste" style="display: none;">
 	            	<div class="col-md-12">
 						<div class="form-group-md">
 							<label for="txta_informar_ajuste" >i18n.translate("txta_informar_ajuste")</label>
@@ -516,7 +521,7 @@
             </div>
         </div>
         
-        <div class="panel panel-default" id="integracao">
+        <div class="panel panel-default" id="divIntegracaoProtheus">
             <div class="panel-heading ">
                 <h3 class="panel-title">
                     <strong>i18n.translate("integracao_protheus")</strong>
